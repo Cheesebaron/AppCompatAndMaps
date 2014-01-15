@@ -67,14 +67,14 @@ namespace AppCompatAndMaps
             var queryResult = GooglePlayServicesUtil.IsGooglePlayServicesAvailable(this);
             if (queryResult == ConnectionResult.Success)
             {
-                Log.Info("SimpleMapDemo", "Google Play Services is installed on this device.");
+                Log.Info("AppCompatAndMaps", "Google Play Services is installed on this device.");
                 return true;
             }
 
             if (GooglePlayServicesUtil.IsUserRecoverableError(queryResult))
             {
                 var errorString = GooglePlayServicesUtil.GetErrorString(queryResult);
-                Log.Error("SimpleMapDemo", "There is a problem with Google Play Services on this device: {0} - {1}", queryResult, errorString);
+                Log.Error("AppCompatAndMaps", "There is a problem with Google Play Services on this device: {0} - {1}", queryResult, errorString);
                 var errorDialog = GooglePlayServicesUtil.GetErrorDialog(queryResult, this, InstallGooglePlayServicesId);
                 errorDialog.Show();
             }
